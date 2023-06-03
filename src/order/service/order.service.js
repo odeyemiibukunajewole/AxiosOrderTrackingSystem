@@ -1,5 +1,6 @@
 import db from "../../../models";
 import App from "../../util/index";
+
 const { Order, OrderDetail, OrderTacking } = db;
 
 class OrderService {
@@ -72,21 +73,20 @@ class OrderService {
       }));
 
       const OrderDetailList = await OrderDetail.bulkCreate(productOrdered);
-      console.log("OrderDetail====>", OrderDetailList)
 
+      const OrderDetailOrdered = OrderDetailList.map((item) => ({
+        orderDetailId: item.id,
+        trackerID:App.randomString(10)
+      }));
 
-      // await OrderTacking.create({
-      //   orderId: order.id,
-      //   status: CREATED
-      // },
-      //   {
-      //     raw: true,
-      //   }
-      // )
+      console.log(OrderDetailOrdered)
+      const Tacking = await OrderTacking.bulkCreate(OrderDetailOrdered);
+
+ 
 
       return res
         .status(200)
-        .send({ "message": "order created please check your email" });
+        .send({ "message": "order created please check your email",OrderDetailList,Tacking });
     } catch (error) {
       throw error;
     }

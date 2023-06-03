@@ -2,8 +2,7 @@
 const {
   Model
 } = require('sequelize');
-import { nanoid } from 'nanoid'
-const trackerID = nanoid(10)
+
 module.exports = (sequelize, DataTypes) => {
   class OrderTacking extends Model {
     /**
@@ -33,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     trackerID: {
       type: DataTypes.TEXT,
-      defaultValues: trackerID,
+      allowNull: false,
       unique: true,
     },
   }, {

@@ -7,6 +7,7 @@ const passport = require('passport');
 const orderRouter = express.Router();
 
 orderRouter.post("/create-order",
+    passport.authenticate('jwt', { session: false }),
     validateSchema(orderSchema),
     handleErrorAsync(OrderController.CreateOrder)
 );

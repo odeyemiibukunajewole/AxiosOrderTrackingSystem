@@ -78,7 +78,7 @@ class AuthController {
 
       const token = App.assignToken({ id: user.id, email: user.email });
 
-      return res.status(200).send({ user: { ...user, token } });
+      return res.status(200).send({ token });
     } catch (error) {
       throw new Error(error);
     }

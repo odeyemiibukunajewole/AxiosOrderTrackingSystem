@@ -10,8 +10,8 @@ export const orderSchema =
                 })
             )
             .min(1),
-        totalQuantity: Joi.number(),
-        totalPrice: Joi.number(),
+        totalQuantity: Joi.number().required(),
+        totalPrice: Joi.number().required(),
         customerEmail: Joi.any(),
         customerLastName: Joi.any(),
         customerFirstName: Joi.any(),
