@@ -6,7 +6,7 @@ import authRouter from "../src/auth/route/auth.route";
 import orderRoute from"../src/order/route/order.route";
 import productRoute from "../src/product/route/product.route";
 import orderTackingRouter from "../src/order-tracking/route/order.tracking.route";
-// import orderDetailRouter from "../src/order-detail/route/order.detail.route"
+import orderDetailRouter from "../src/order-detail/route/order.detail.route"
 
 const { stream, logger } = require("./logger/winston");
 const morgan = require("morgan");
@@ -45,7 +45,7 @@ app.use(`${prefix}auth`, authRouter);
 app.use(`${prefix}order`, orderRoute);
 app.use(`${prefix}product`, productRoute);
 app.use(`${prefix}order-tracking`, orderTackingRouter);
-// app.use(`${prefix}order-detail`, orderDetailRouter);
+app.use(`${prefix}order-detail`, orderDetailRouter);
 
 
 

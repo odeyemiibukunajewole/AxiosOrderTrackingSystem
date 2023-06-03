@@ -32,10 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
 
-    isDeleted: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
+  
     mainImageUrl: {
       type: DataTypes.STRING,
       allowNull: false,

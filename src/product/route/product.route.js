@@ -6,6 +6,7 @@ import { validateSchema} from "../../util/validation.services"
 const passport = require('passport');
 const productRouter = express.Router();
 
+console.log("heddddre")
 productRouter.post("/create-product",
     passport.authenticate('jwt', { session: false }),
     validateSchema(productSchema),

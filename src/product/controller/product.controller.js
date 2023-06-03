@@ -23,9 +23,7 @@ class ProductController {
   static async getProducts(req, res) {
     try {
       const products = await Product.findAll({
-        where: {
-          isDeleted: false,
-        },
+       
       });
 
       return res.status(200).send({ data: products });
