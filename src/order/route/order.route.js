@@ -11,12 +11,12 @@ orderRouter.post("/create-order",
     handleErrorAsync(OrderController.CreateOrder)
 );
 
-orderRouter.post("/get-order",
+orderRouter.get("/get-order",
     passport.authenticate('jwt', { session: false }),
     handleErrorAsync(OrderController.getUserOrder)
 );
 
-orderRouter.post("/update-order",
+orderRouter.post("/update-order/:id",
     passport.authenticate('jwt', { session: false }),
     handleErrorAsync(OrderController.UpdateOrderStatus)
 );

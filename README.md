@@ -24,37 +24,40 @@ npm start
 ### Products
 
 ```
-GET      /api/v1/products
-GET      /api/v1/products/:id
-POST     /api/v1/products
-PUT      /api/v1/products/:id
-DELETE   /api/v1/products/:id
+GET      /api/v1/product/get-product
+GET      /api/v1/products/get-product/:id
+POST     /api/v1/products/create-product
+
 ```
 
 ### Orders
 
 ```
-GET      /api/v1/orders
-GET      /api/v1/orders/:id
-POST     /api/v1/orders
-PUT      /api/v1/orders/:id
-DELETE   /api/v1/orders/:id
+GET      /api/v1/order/get-order
+POST      /api/v1/order/update-order/:id
+POST     /api/v1/order/create-order
 ```
 
-### Users
+
+### Orders Tracking
 
 ```
-GET      /api/v1/users
-GET      /api/v1/users/:id
-POST     /api/v1/users
-PUT      /api/v1/users/:id
-DELETE   /api/v1/users/:id
+GET      /api/v1/order-tracking/get-product
+GET      /api/v1/order-tracking/get-product/:id
+```
+
+### Order Detail
+
+```
+PUT      /api/v1/order-detail/update-order-detail/id
+GET      /api/v1/order-detail/get-order-detail
+
 ```
 
 #### Register new user
 
 ```
-POST     /api/v1/users/register
+POST      /api/v1/auth/register
 ```
 
 #### Login user
@@ -62,6 +65,6 @@ POST     /api/v1/users/register
 To login the user and get the auth token you can use:
 
 ```
-POST     /api/v1/users/login
+POST      /api/v1/auth/login
 ```
 
