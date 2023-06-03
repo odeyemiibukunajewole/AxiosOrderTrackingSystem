@@ -1,0 +1,61 @@
+{
+  "name": "axiosordertrackingsystem",
+  "version": "1.0.0",
+  "description": "# NodeJs: Build The Complete E-Commerce Web Tracking API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && NODE_ENV=production npm run migrate && NODE_ENV=production npm run migrate-seed && NODE_ENV=production pm2 start ./dist/index.js",
+    "dev": "npm run migrate && npm run migrate-seed-dev && nodemon --exec babel-node ./src/index.js",
+    "build": "babel src -d dist",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate-seed": "NODE_ENV=production&& npx sequelize-cli db:seed:all",
+    "migrate-seed-dev": "npx sequelize-cli db:seed:all",
+    "make-migration": "npx sequelize-cli migration:generate --name",
+    "model-generate": "npx sequelize-cli model:generate --name"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odeyemiibukunajewole/AxiosOrderTrackingSystem.git"
+  },
+  "author": "Odeyemi Ibukun Ajewole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/odeyemiibukunajewole/AxiosOrderTrackingSystem/issues"
+  },
+  "homepage": "https://github.com/odeyemiibukunajewole/AxiosOrderTrackingSystem#readme",
+  "dependencies": {
+    "@types/node": "^16.9.2",
+    "@types/validator": "^13.6.3",
+    "app-root-path": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.17.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs-promise": "^0.3.3",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.3.3",
+    "nanoid": "^3.3.6",
+    "nodemon": "^2.0.12",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "regenerator-runtime": "^0.13.9",
+    "sequelize": "^6.32.0",
+    "sequelize-cli": "^6.2.0",
+    "validator": "^13.7.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/node": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "sequelize-cli": "^6.6.0"
+  }
+}
