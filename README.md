@@ -25,8 +25,8 @@ npm start
 
 ```
 GET      /api/v1/product/get-product
-GET      /api/v1/products/get-product/:id
-POST     /api/v1/products/create-product
+GET      /api/v1/product/get-product/:id
+POST     /api/v1/product/create-product
 
 ```
 
