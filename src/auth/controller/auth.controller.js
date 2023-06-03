@@ -31,7 +31,7 @@ class AuthController {
 
       const userExits = await User.findOne({
         where: {
-          [Op.and]: [{ email }, { role }]
+          [Op.and]: [{ email }]
         },
         raw: true,
       });
@@ -51,7 +51,7 @@ class AuthController {
         },
         { raw: true }
       );
-
+console.log("user");
       const token = App.assignToken({ id: user.id, email: user.email });
 
       res.status(201).send({ message: "Successful", user: { ...user, token } });
