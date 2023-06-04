@@ -10,8 +10,6 @@ class ProductController {
 
   static async createProduct(req, res) {
     try {
-
-      console.log(req.body)
       const { ...rest } = req.body;
       const product = await Product.create({ ...rest }, { raw: true });
 

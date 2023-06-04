@@ -4,12 +4,16 @@ import { handleErrorAsync } from "../../util/ErrorHandler";
 
 const orderTackingRouter = express.Router();
 
-orderTackingRouter.get("/get-product",
+orderTackingRouter.get("/get-products",
     handleErrorAsync(OrderTackingController.getOrderTackings)
 );
 
 orderTackingRouter.get("/get-product/:id",
     handleErrorAsync(OrderTackingController.getOrderTackingByID)
+);
+
+orderTackingRouter.get("/track",
+    handleErrorAsync(OrderTackingController.getOrderTacking)
 );
 
 export default  orderTackingRouter

@@ -44,6 +44,7 @@ POST     /api/v1/order/create-order
 ```
 GET      /api/v1/order-tracking/get-product
 GET      /api/v1/order-tracking/get-product/:id
+GET      /api/v1/order-tracking/track?tracker_id=BTY4F3hdKO
 ```
 
 ### Order Detail
